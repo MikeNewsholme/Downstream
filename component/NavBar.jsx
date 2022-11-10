@@ -1,6 +1,6 @@
 //importing styles from styles folder
 import styles from "../styles/Navbar.module.css";
-import Image from 'next/image'
+import Image from "next/image";
 
 const Navbar = () => {
   return (
@@ -21,10 +21,10 @@ const Navbar = () => {
           <li className={styles.listItem}>Hardware</li>
           <div className={styles.listLogo}>
             <Image
-              src="/img/logo.png"
+              src="/img/logo3.png"
               alt="stream logo"
-              height="50"
-              width="50"
+              height="80"
+              width="80"
             />
           </div>
 
