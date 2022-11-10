@@ -16,9 +16,11 @@ const Slider = () => {
       "/img/mousepad.jpg",
     ];
     const handleArrow = (direction) => {
+        //if index is not 0, decrease number by 1. If it is 0, it will go to last item in index
         if(direction === 'l'){
             setIndex(index !== 0 ? index -1 : 4)
         }
+        //if index is not 4, increase number by 1. If it is 4, it will go to index 0
          if (direction === "r") {
            setIndex(index !== 4 ? index + 1 : 0);
          }

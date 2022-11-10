@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import Footer from "../component/Footer";
 import Navbar from "../component/NavBar";
 import Slider from "../component/Slider";
+import Productlist from "../component/Products";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Slider/>
+      <Productlist/>
       
     </div>
   );
