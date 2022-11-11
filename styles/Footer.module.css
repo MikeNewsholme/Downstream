@@ -1,0 +1,21 @@
+.container {
+    background-color:  rgba(128, 0, 128, 0.873);
+    height: 100px;
+    display:flex;
+    justify-content: center;
+
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}

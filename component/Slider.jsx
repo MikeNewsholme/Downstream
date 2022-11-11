@@ -7,13 +7,13 @@ import {useState} from 'react'
 
 const Slider = () => {
     const [index, setIndex] = useState(0)
+    //made images into an object to map over
     const images = [
       "/img/computertower2.jpg",
       "/img/headset.jpg",
-      
-      "/img/gfuel.jpg",
-      "/img/mouse.jpeg",
       "/img/mousepad.jpg",
+      "/img/mouse.jpeg",
+      "/img/alohaenergy.jpg",
     ];
     const handleArrow = (direction) => {
         //if index is not 0, decrease number by 1. If it is 0, it will go to last item in index
