@@ -1,0 +1,82 @@
+.container{
+    height: calc(100vh - 100px);
+    display: flex;
+    
+}
+
+.leftside {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rightside {
+    flex: 1;
+    padding: 20px;
+}
+.title {
+    font-size: 50px;
+    text-align: center;
+    color: rgba(128, 0, 128, 0.873);
+}
+.image {
+    width: 80%;
+    height: 80%;
+    position: relative;
+
+}
+
+.price {
+    color: rgba(128, 0, 128, 0.873);
+    font-size: 24px;
+    font-weight: 400;
+    
+}
+
+.size {
+    width: 200px;
+    height: 40px;
+    position: relative;
+    
+    
+
+}
+.size:hover {
+    box-shadow: 2px 2px 2px 2px black ;
+}
+.sizes{
+    display: flex;
+    cursor: pointer;
+    
+}
+
+.option{
+    display:flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.checkbox{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+}
+
+.quantity{
+    width: 50px;
+    height:30px;
+    
+
+}
+.button {
+    height: 30px;
+    background-color: rgba(128, 0, 128, 0.873);
+    color: white;
+    border-radius: 10px;
+    border:none;
+    cursor: pointer;
+    
+}
