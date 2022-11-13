@@ -97,10 +97,17 @@ justify-content: center;
     font-weight: bold;
     color: rgba(128, 0, 128, 0.615)
 
+}
 
+@media screen and (max-width: 480px) {
+    .item:nth-child(2){
+display:none
 
-
+}
+  .item:nth-child(1){
+flex: 3
 
 }
 
 
+}

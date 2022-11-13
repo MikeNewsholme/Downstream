@@ -12,6 +12,7 @@
   font-size: 22px;
   font-weight: bold;
   color: rgba(128, 0, 128, 0.44);
+  
 }
 
 .price {
@@ -26,4 +27,19 @@
 }
 .container:hover {
     background-color: rgba(84, 83, 83, 0.515);
+}
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .price,
+  .desc {
+    font-size: 24px;
+  }
 }
