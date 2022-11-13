@@ -22,7 +22,7 @@ const OrderSchema = new mongoose.Schema(
     },
     method: {
       type: Number,
-      required: true
+      required: true,
     },
   },
   { timestamps: true }
@@ -30,5 +30,4 @@ const OrderSchema = new mongoose.Schema(
 
 //if you already have order model, Use it. if there are no models, create order model
 
-export default mongoose.models.Order ||
-  mongoose.model("Order", OrderSchema);
+export default mongoose.models.Order || mongoose.model("Order", OrderSchema);
