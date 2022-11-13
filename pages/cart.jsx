@@ -39,7 +39,6 @@ const Cart = () => {
                 <span className={styles.total}>$9500</span>
               </td>
             </tr>
-            
           </table>
         </tbody>
       </div>
