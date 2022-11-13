@@ -11,9 +11,9 @@ export default function Home() {
     <div className={styles.container}>
       
       <Head>
-        <title>Downstream App for streaming supplies</title>
+        <title>Downstream-GG's</title>
         <meta name="description" content="Changing the way you stream" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/img/logo3.png" />
       </Head>
       <Slider/>
       <Productlist/>
