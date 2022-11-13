@@ -1,0 +1,49 @@
+.container{
+    padding: 50px;
+}
+
+.imgContainer{
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+.left{
+    flex:2
+}
+
+.right{
+    flex:1
+}
+
+.table {
+    width: 100%;
+    border-spacing: 20px;
+
+}
+.name {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.total{
+    font-weight: 500;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.totalText{
+    margin-bottom: 10px;
+}
+.button {
+    height: 40px;
+    background-color: rgba(128, 0, 128, 0.873);
+    color: white;
+    border-radius: 10px;
+    border:none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}

@@ -13,7 +13,8 @@ const id = () => {
     price: [6000, 8000, 9500],
     desc: "Velztorm Lux CTO Gaming Desktop PC Liquid-Cooled",
     Memory_Capacity: [32, 64, 128],
-    upgrade: [125, 250],
+    upgrade: [125, 250, 300],
+
   };
   return (
     <div className={styles.container}>
@@ -29,7 +30,9 @@ const id = () => {
       </div>
       <div className={styles.rightside}>
         <h1 className={styles.title}>{item.name}</h1>
-        <span className={styles.price}>Price: ${item.price[size]}</span>
+        <span className={styles.price}>
+          Price: ${item.price[size]}
+        </span>
         <p classname={styles.desc}>{item.desc}</p>
         <h3 className={styles.Memory_Capacity}>Choose your memory capacity:</h3>
         <hr></hr>
@@ -65,7 +68,7 @@ const id = () => {
         <hr></hr>
         <h3 className={styles.choose}>Choose additional features:</h3>
         <div className={styles.addon}>
-          <div className={styles.option}>
+          <div className={styles.upgrade}>
             <input
               type="checkbox"
               id="upgrade"
@@ -74,14 +77,24 @@ const id = () => {
             />
             Preloaded Adobe Photoshop/Video editor
           </div>
-          <div className={styles.option}>
+          <div className={styles.upgrade}>
             <input
               type="checkbox"
               id="shipping"
               name="shipping"
+            
               className={styles.checkbox}
             />
-            Express Shipping(1-3 days)
+            Express Shipping (1-3 days)
+          </div>
+          <div className={styles.upgrade}>
+            <input
+              type="checkbox"
+              id="warranty"
+              name="warranty"
+              className={styles.checkbox}
+            />
+            Extended Warranty (2 years)
           </div>
           <hr></hr>
           <div className={styles.add}>
