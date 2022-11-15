@@ -5,8 +5,8 @@ const Cart = () => {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <tbody>
-          <table className={styles.table}>
+        <table className={styles.table}>
+          <tbody>
             <tr className={styles.trTitle}>
               <th>Product</th>
               <th>Name</th>
@@ -17,12 +17,7 @@ const Cart = () => {
             <tr className={styles.tr}>
               <td>
                 <div className={styles.imgContainer}>
-                  <Image
-                    src="/img/logo3.png"
-                    layout="fill"
-                    objectFit="cover"
-                    alt=""
-                  />
+                  <Image src="/img/logo3.png" layout="fill" alt="logo" />
                 </div>
               </td>
               <td>
@@ -39,20 +34,21 @@ const Cart = () => {
                 <span className={styles.total}>$9500</span>
               </td>
             </tr>
-          </table>
-        </tbody>
+          </tbody>
+        </table>
       </div>
+
       <div className={styles.right}>
         <div className={styles.wrapper}>
           <h2 className={styles.title}>CART TOTAL</h2>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Subtotal:</b>$9500.00
+            <div className={styles.totalTextTitle}>Subtotal:</div>$9500.00
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Discount:</b>$0.00
+            <div className={styles.totalTextTitle}>Discount:</div>$0.00
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Total:</b>$9500.00
+            <div className={styles.totalTextTitle}>Total:</div>$9500.00
           </div>
           <button className={styles.button}>Check out</button>
         </div>

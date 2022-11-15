@@ -8,6 +8,8 @@ const id = ({ product }) => {
   const [size, setSize] = useState(0);
   const [extras, setExtras] = useState([]);
 
+  //
+
   const changePrice = (number) => {
     setPrice(price + number);
   };
@@ -35,7 +37,7 @@ const id = ({ product }) => {
         <div className={styles.image}>
           <Image
             src={product.img}
-            alt="red devil"
+            alt=""
             layout="fill"
             objectFit="contain"
           />

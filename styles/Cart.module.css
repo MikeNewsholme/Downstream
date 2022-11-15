@@ -42,9 +42,11 @@
 
 .totalText{
     margin-bottom: 10px;
+    font-weight: 500;
 }
 .button {
     height: 40px;
+    width: 100px;
     background-color: rgba(128, 0, 128, 0.873);
     color: white;
     border-radius: 10px;
@@ -88,7 +90,7 @@
     font-size: 24px;
   }
 
-  .upgrades,.price,{
+  .upgrades,.price{
     font-size: 22px;
   }
 
