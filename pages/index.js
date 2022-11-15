@@ -1,12 +1,13 @@
 import Head from "next/head";
-import Image from "next/image";
+//import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Footer from "../component/Footer";
-import Navbar from "../component/NavBar";
 import Slider from "../component/Slider";
 import Productlist from "../component/Products";
+import axios from "axios"
 
-export default function Home() {
+export default function Home({productList}) {
+ 
+
   return (
     <div className={styles.container}>
       
@@ -16,8 +17,18 @@ export default function Home() {
         <link rel="icon" href="/img/logo3.png" />
       </Head>
       <Slider/>
-      <Productlist/>
+      <Productlist productList={productList}/>
       
     </div>
   );
+}
+
+ //In nextJS you can fetch all data before rendering components and then show components with those props
+export const getServerSideProps = async () =>{
+  const res = await axios.get("http://localhost:3000/api/products");
+  return{
+    props:{
+      productList:res.data
+    }
+  }
 }
