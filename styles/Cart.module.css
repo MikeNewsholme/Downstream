@@ -1,6 +1,8 @@
 .container{
     padding: 50px;
     display:flex;
+    height: 100vh;
+     
 }
 
 .imgContainer{
@@ -9,7 +11,8 @@
     position: relative;
 }
 .left{
-    flex:2
+  
+    flex:1
 }
 
 .right{
@@ -18,25 +21,29 @@
 
 .table {
     width: 100%;
+    
+    
     border-spacing: 20px;
 
 }
 .name {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .total{
     font-weight: 500;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    font-size: 24px;
+    
 }
 .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 50px;
+    padding-top: 10px;
+    width:90%;
+   
 
 }
 
