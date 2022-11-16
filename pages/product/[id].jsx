@@ -2,13 +2,14 @@ import Image from "next/image";
 import styles from "../../styles/Product.module.css";
 import { useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/cartSlice";
 
 const id = ({ product }) => {
   const [price, setPrice] = useState(product.prices[0]);
   const [size, setSize] = useState(0);
   const [extras, setExtras] = useState([]);
-
-  //
+  const dispatch = useDispatch();
 
   const changePrice = (number) => {
     setPrice(price + number);
@@ -31,16 +32,16 @@ const id = ({ product }) => {
     }
   };
 
+  const handleClick = () => {
+    dispatch(addProduct({ ...product, extras, price }));
+  };
+  //what i am passing as a payload
+
   return (
     <div className={styles.container}>
       <div className={styles.leftside}>
         <div className={styles.image}>
-          <Image
-            src={product.img}
-            alt=""
-            layout="fill"
-            objectFit="contain"
-          />
+          <Image src={product.img} alt="" layout="fill" objectFit="contain" />
         </div>
       </div>
       <div className={styles.rightside}>
@@ -96,7 +97,9 @@ const id = ({ product }) => {
           <hr></hr>
           <div className={styles.add}>
             <imput type="number" defaultValue={1} className={styles.quantity} />
-            <button className={styles.button}>Add to Cart</button>
+            <button className={styles.button} onClick={handleClick}>
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>

@@ -1,8 +1,11 @@
 //importing styles from styles folder
 import styles from "../styles/Navbar.module.css";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const Navbar = () => {
+  const quantity = useSelector((state) => state.cart.quantity);
   return (
     <div className={styles.container}>
       <div className={styles.item}>
@@ -15,10 +18,8 @@ const Navbar = () => {
         </div>
       </div>
       <div className={styles.item}>
-        <ul className={styles.list}>
-          <li className={styles.listItem}>Home</li>
-          <li className={styles.listItem}>Software</li>
-          <li className={styles.listItem}>Hardware</li>
+        <ul className={styles.list}>       
+          <li className={styles.listItem}>Pre-Builds</li>
           <div className={styles.listLogo}>
             <Image
               src="/img/logo3.png"
@@ -27,18 +28,16 @@ const Navbar = () => {
               width="80"
             />
           </div>
-
-          <li className={styles.listItem}>Accessories</li>
-          <li className={styles.listItem}>Gift Cards</li>
-          <li className={styles.listItem}>Contact</li>
+          <li className={styles.listItem}>Care Packages</li>
+          
         </ul>
       </div>
-      <div className={styles.item}>
+      <Link href="/cart" className={styles.item} passHref>
         <div className={styles.cart}>
-          <Image src="/img/cart.png" alt="cart logo" height="50" width="50" />
-          <div className={styles.itemCounter}>2</div>
-        </div>
-      </div>
+            <Image src="/img/cart.png" alt="cart logo" height="50" width="50" />
+            <div className={styles.itemCounter}>{quantity}</div>
+          </div>
+        </Link>
     </div>
   );
 };
