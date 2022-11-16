@@ -9,6 +9,7 @@ const id = ({ product }) => {
   const [price, setPrice] = useState(product.prices[0]);
   const [size, setSize] = useState(0);
   const [extras, setExtras] = useState([]);
+  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
 
   const changePrice = (number) => {
@@ -33,7 +34,7 @@ const id = ({ product }) => {
   };
 
   const handleClick = () => {
-    dispatch(addProduct({ ...product, extras, price }));
+    dispatch(addProduct({ ...product, extras, price, quantity }));
   };
   //what i am passing as a payload
 
@@ -47,7 +48,7 @@ const id = ({ product }) => {
       <div className={styles.rightside}>
         <h1 className={styles.title}>{product.title}</h1>
         <span className={styles.price}>Price: ${price}</span>
-        <p classname={styles.desc}>{product.desc}</p>
+        <p className={styles.desc}>{product.desc}</p>
         <h3 className={styles.Memory_Capacity}>Choose your memory capacity:</h3>
         <hr></hr>
         <div className={styles.sizes}>
@@ -96,7 +97,12 @@ const id = ({ product }) => {
           ))}
           <hr></hr>
           <div className={styles.add}>
-            <imput type="number" defaultValue={1} className={styles.quantity} />
+            <input
+              onChange={(e) => setQuantity(e.target.value)}
+              type="number"
+              defaultValue={1}
+              className={styles.quantity}
+            />
             <button className={styles.button} onClick={handleClick}>
               Add to Cart
             </button>
