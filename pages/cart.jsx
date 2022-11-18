@@ -1,18 +1,16 @@
 import styles from "../styles/Cart.module.css";
 import Image from "next/image";
-import { useDispatch, useSelector } from "react-redux"
-import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import {
   PayPalScriptProvider,
   PayPalButtons,
   usePayPalScriptReducer,
 } from "@paypal/react-paypal-js";
 import axios from "axios";
-import { useRouter } from "next/router"
-import { reset } from "../redux/cartSlice"
+import { useRouter } from "next/router";
+import { reset } from "../redux/cartSlice";
 //import OrderDetail from "../component/OrderDetail"
-
-
 
 const Cart = () => {
   //These values are the props in the UI
@@ -24,7 +22,6 @@ const Cart = () => {
   const style = { layout: "vertical" };
   const router = useRouter();
   const dispatch = useDispatch();
-  
 
   const createOrder = async (data) => {
     try {
@@ -60,7 +57,7 @@ const Cart = () => {
           style={style}
           disabled={false}
           forceReRender={[amount, currency, style]}
-          fundingSource={'paypal'}
+          fundingSource={"paypal"}
           createOrder={(data, actions) => {
             return actions.order
               .create({
@@ -184,4 +181,3 @@ const Cart = () => {
 };
 
 export default Cart;
-

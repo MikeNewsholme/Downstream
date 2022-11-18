@@ -1,6 +1,6 @@
 import Footer from "./Footer"
 import Navbar from "./NavBar"
-import Background from "./Background"
+
 
 const Layout = ({children}) => {
     return (
