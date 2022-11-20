@@ -6,6 +6,7 @@ import Productlist from "../component/Products";
 import axios from "axios"
 import { useState } from 'react'
 import AddButton from "../component/AddButton";
+import Add from "../component/Add"
 
 export default function Home({productList, admin}) {
  const [close, setClose] = useState(true)

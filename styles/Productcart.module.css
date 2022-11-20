@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px 40px;
+  
 }
 
 .title {
@@ -27,6 +28,7 @@
 }
 .container:hover {
     background-color: rgba(84, 83, 83, 0.515);
+    border-radius: 15px;
 }
 @media screen and (max-width: 480px) {
   .container {

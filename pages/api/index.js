@@ -1,9 +1,9 @@
-const { isRejectedWithValue } = require('@reduxjs/toolkit');
+
 const express = require ('express')
 const app = express();
 app.use(express.json())
 const jwt = require("jsonwebtoken");
-const { useDeferredValue } = require('react');
+
 
 const users = [
   {
@@ -16,7 +16,7 @@ const users = [
     id: "2",
     username: "mike",
     password: "mike",
-    isAdmin: true,
+    isAdmin: false,
   },
 ];
 app.post("/api/login", (req,res) =>{
