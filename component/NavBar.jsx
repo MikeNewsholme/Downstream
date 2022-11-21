@@ -30,8 +30,8 @@ const Navbar = () => {
               width="80"
             />
           </div>
-          <Link href="" passHref>
-            <li className={styles.listItem}>Care Packages</li>
+          <Link href="/login" passHref>
+            <li className={styles.listItem}>Sign In</li>
           </Link>
         </ul>
       </div>

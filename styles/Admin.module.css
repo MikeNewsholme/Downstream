@@ -20,10 +20,8 @@
   cursor: pointer;
 }
 
-.button:first-child {
-  background-color: darkslateblue;
-  margin-right: 10px;
-}
+
+
 
 .button:last-child {
   background-color: rgba(128, 0, 128, 0.873);

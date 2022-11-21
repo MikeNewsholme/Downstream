@@ -29,7 +29,7 @@ const SignIn = (props) => {
             setUserInfo({ ...userInfo, email: target.value })
           }
           type="email"
-          placeholder="john@email.com"
+          placeholder="mike@email.com"
         />
         <input
           value={userInfo.password}

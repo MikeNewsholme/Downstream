@@ -4,9 +4,9 @@ import axios from "axios";
 import { useState } from "react";
 
 const Index = ({ products, orders }) => {
-  const [productList, setProductList] = useState(products)
-  const [orderList, setOrderList] = useState(orders)
-  const status = ["preparing", "on the way", 'delivered']
+  const [productList, setProductList] = useState(products);
+  const [orderList, setOrderList] = useState(orders);
+  const status = ["preparing", "on the way", "delivered"];
 
   //making API request to delete by id
   //using useState to update state once a product is deleted to update the screen
@@ -22,20 +22,22 @@ const Index = ({ products, orders }) => {
     }
   };
 
+  const handleStatus = async (id) => {
+    const item = orderList.filter((order) => order._id === id)[0];
+    const currentStatus = item.status;
 
-const handleStatus = async (id) => {
-  const item = orderList.filter((order) => order._id === id)[0];
-  const currentStatus = item.status;
-
-  try {
-    const res = await axios.put("http://localhost:3000/api/orders/" + id, {
-      status: currentStatus + 1,
-    });
-    setOrderList([res.data, ...orderList.filter((order) => order._id !== id)]);
-  } catch (err) {
-    console.log(err);
-  }
-};
+    try {
+      const res = await axios.put("http://localhost:3000/api/orders/" + id, {
+        status: currentStatus + 1,
+      });
+      setOrderList([
+        res.data,
+        ...orderList.filter((order) => order._id !== id),
+      ]);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -69,7 +71,12 @@ const handleStatus = async (id) => {
 
                 <td>
                   <button className={styles.button}>Edit</button>
-                  <button className={styles.button} onClick={()=>handleDelete(product._id)}>Delete</button>
+                  <button
+                    className={styles.button}
+                    onClick={() => handleDelete(product._id)}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             </tbody>
@@ -79,7 +86,7 @@ const handleStatus = async (id) => {
       <div className={styles.item}>
         <h1 className={styles.title}>Orders</h1>
         <table className={styles.table}>
-           <tbody>
+          <tbody>
             <tr className={styles.trTitle}>
               <th>Id</th>
               <th>Customer</th>
@@ -103,9 +110,9 @@ const handleStatus = async (id) => {
                   <button onClick={() => handleStatus(order._id)}>
                     Next Stage
                   </button>
-              </td>
-            </tr>
-          </tbody>
+                </td>
+              </tr>
+            </tbody>
           ))}
         </table>
       </div>
@@ -116,22 +123,22 @@ const handleStatus = async (id) => {
 //creating server side props
 //using axios to fetch data
 export const getServerSideProps = async (ctx) => {
-    const myCookie = ctx.req?.cookies || "";
+  const myCookie = ctx.req?.cookies || "";
 
-    if(myCookie.token !== process.env.TOKEN){
-      return{
-        redirect:{
-          destination:"/admin/login",
-          permanent: false
-        }
-      }
-    }
-    const productRes = await axios.get(`http://localhost:3000/api/products`)
-    const orderRes = await axios.get("http://localhost:3000/api/orders");
+  if (myCookie.token !== process.env.TOKEN) {
+    return {
+      redirect: {
+        destination: "/admin/login",
+        permanent: false,
+      },
+    };
+  }
+  const productRes = await axios.get(`http://localhost:3000/api/products`);
+  const orderRes = await axios.get("http://localhost:3000/api/orders");
 
   //return them as a prop
   return {
-   props: {
+    props: {
       //orders: orderRes.data,
       products: productRes.data,
       orders: orderRes.data,
