@@ -4,6 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/cartSlice";
+import { useSession } from "next-auth/react";
 
 const id = ({ product }) => {
   const [price, setPrice] = useState(product.prices[0]);
@@ -11,6 +12,7 @@ const id = ({ product }) => {
   const [extras, setExtras] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
+  const { data: session, status } = useSession({ required: true });
 
   const changePrice = (number) => {
     setPrice(price + number);
@@ -37,80 +39,83 @@ const id = ({ product }) => {
     dispatch(addProduct({ ...product, extras, price, quantity }));
   };
   //what i am passing as a payload
-
-  return (
-    <div className={styles.container}>
-      <div className={styles.leftside}>
-        <div className={styles.image}>
-          <Image src={product.img} alt="" layout="fill" objectFit="contain" />
-        </div>
-      </div>
-      <div className={styles.rightside}>
-        <h1 className={styles.title}>{product.title}</h1>
-        <span className={styles.price}>Price: ${price}</span>
-        <p className={styles.desc}>{product.desc}</p>
-        <h3 className={styles.Memory_Capacity}>Choose your memory capacity:</h3>
-        <hr></hr>
-        <div className={styles.sizes}>
-          <div className={styles.size} onClick={() => handleSize(0)}>
-            <Image
-              src="/img/32GB.jpg"
-              alt="32gb"
-              layout="fill"
-              objectFit="contain"
-            />
-            <span className={styles.gigs}></span>
-          </div>
-          <div className={styles.size} onClick={() => handleSize(1)}>
-            <Image
-              src="/img/64GB.jpg"
-              alt="64gb"
-              layout="fill"
-              objectFit="contain"
-            />
-            <span className={styles.gigs}></span>
-          </div>
-          <div className={styles.size} onClick={() => handleSize(2)}>
-            <Image
-              src="/img/128GB.jpg"
-              alt="128gb"
-              layout="fill"
-              objectFit="contain"
-            />
-            <span className={styles.gigs}></span>
+  if (status === "authenticated") {
+    return (
+      <div className={styles.container}>
+        <div className={styles.leftside}>
+          <div className={styles.image}>
+            <Image src={product.img} alt="" layout="fill" objectFit="contain" />
           </div>
         </div>
-        <hr></hr>
-        <h3 className={styles.choose}>Choose additional features:</h3>
-        <div className={styles.addon}>
-          {product.extraOption.map((upgrade) => (
-            <div className={styles.upgrade} key={upgrade._id}>
-              <input
-                type="checkbox"
-                id={upgrade.text}
-                name={upgrade.text}
-                className={styles.checkbox}
-                onChange={(e) => handleChange(e, upgrade)}
-              />
-              <label htmlFor="double">{upgrade.text}</label>
-            </div>
-          ))}
+        <div className={styles.rightside}>
+          <h1 className={styles.title}>{product.title}</h1>
+          <span className={styles.price}>Price: ${price}</span>
+          <p className={styles.desc}>{product.desc}</p>
+          <h3 className={styles.Memory_Capacity}>
+            Choose your memory capacity:
+          </h3>
           <hr></hr>
-          <div className={styles.add}>
-            <input
-              onChange={(e) => setQuantity(e.target.value)}
-              type="number"
-              defaultValue={1}
-              className={styles.quantity}
-            />
-            <button className={styles.button} onClick={handleClick}>
-              Add to Cart
-            </button>
+          <div className={styles.sizes}>
+            <div className={styles.size} onClick={() => handleSize(0)}>
+              <Image
+                src="/img/32GB.jpg"
+                alt="32gb"
+                layout="fill"
+                objectFit="contain"
+              />
+              <span className={styles.gigs}></span>
+            </div>
+            <div className={styles.size} onClick={() => handleSize(1)}>
+              <Image
+                src="/img/64GB.jpg"
+                alt="64gb"
+                layout="fill"
+                objectFit="contain"
+              />
+              <span className={styles.gigs}></span>
+            </div>
+            <div className={styles.size} onClick={() => handleSize(2)}>
+              <Image
+                src="/img/128GB.jpg"
+                alt="128gb"
+                layout="fill"
+                objectFit="contain"
+              />
+              <span className={styles.gigs}></span>
+            </div>
+          </div>
+          <hr></hr>
+          <h3 className={styles.choose}>Choose additional features:</h3>
+          <div className={styles.addon}>
+            {product.extraOption.map((upgrade) => (
+              <div className={styles.upgrade} key={upgrade._id}>
+                <input
+                  type="checkbox"
+                  id={upgrade.text}
+                  name={upgrade.text}
+                  className={styles.checkbox}
+                  onChange={(e) => handleChange(e, upgrade)}
+                />
+                <label htmlFor="double">{upgrade.text}</label>
+              </div>
+            ))}
+            <hr></hr>
+            <div className={styles.add}>
+              <input
+                onChange={(e) => setQuantity(e.target.value)}
+                type="number"
+                defaultValue={1}
+                className={styles.quantity}
+              />
+              <button className={styles.button} onClick={handleClick}>
+                Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(
