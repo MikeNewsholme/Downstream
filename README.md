@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Downstream ™</h1>
+
+## About
+*Downstream is an app that is centered around the gamers and streamers. The app will allow users to order pre-built computers.
 
 ## Getting Started
 
@@ -6,29 +9,92 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Open [http://localhost:3000/admin](http://localhost:3000/admin) with your browser and enter the admin credentials. 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+Admin username: admin
+Admin password: 123456
+```
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Once you are logged in as an admin, go back to [http://localhost:3000](http://localhost:3000) 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Underneath the picture carousel click the "Add New Product" button to add a new product to the database.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  <ul>
+  	    <li><b>Choose an image: </b> Upload any image</li>
+	      <li><b>Enter a tile: </b> Enter a title for the product </li>
+  	    <li><b>Description: </b> Enter a description for the product</li>
+	      <li><b>Set prices: </b> Set 3 prices for the RAM upgrade available </li>
+	      <li><b>Extra Items:</b> Add "Extended Warranty or Express Shipping" and set a price, then click "Add"</li>
+        <li><b>Create:</b> Click the Create button to upload your product to the database</li>
+        <li><b>Refresh:</b> Upon refreshing the page, your product will be displayed at the bottom </li>
+        <li><b>Orders:</b> Update the "Order Status" by clicking the "Next Stage" button until you reach "Delivered" </li>
+        
+        
+	
+<br>
+ <br>
+  
+  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Navigate back to [http://localhost:3000/admin](http://localhost:3000/admin)
+```bash
+Test the Delete button on the product you just created and your product will be deleted from the database.
+```
+ 
+
+
+
+
+## Technology Used
+	
+	
+  	    	NextJS
+	      	React
+  	    	Mongoose
+	      	Redux
+	
+
+
+
+
+
+
+## Routes
+
+| **Method** | **Path** 	| **Purpose**  |
+| ---------- | --------------- 	| -----------  |
+| `GET`      | /		| Home page    |
+| `GET`      | /	 	| Get Product  |
+| `PUT`      | /	 	| Add	       |
+| `DELETE`   | /		| Delete       |
+| `GET`      | /	 	| Get Order    |
+| `PUT`      | /	 	| Update       |
+
+
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+## Deployed on Vercel
+
+
