@@ -1,7 +1,7 @@
 <h1 align="center">Downstream ™</h1>
 
 ## About
-*Downstream is an app that is centered around the gamers and streamers. The app will allow users to order pre-built computers, pay with cash or PayPal, and are able to see the status of their order after they pay .*
+*Downstream is an app that is centered around the gamers and streamers. The app will allow users to order pre-built computers.
 
 ## Getting Started
 
@@ -53,61 +53,37 @@ Test the Delete button on the product you just created and your product will be 
  
 
 
-<br>
+
 
 ## Technology Used
-<code><img height="27" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" alt="react"></code> 
-<code><img height="27" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTTzPAw-55ssm1Im594xYZ9eRQu2JylrkYLg&usqp=CAU" alt="mongodb"></code> 
-<code><img height="27" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" alt="expressjs"></code>
- <code><img height="27" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" alt="nodejs"></code>
+	
+	
+  	    	NextJS
+	      	React
+  	    	Mongoose
+	      	Redux
+	
 
-<br>
 
-
-## Getting Started
-
-Copy and Paste both of the links provided into your web browser in seperate tabs, and navigate to the "Nailed-It-FrontEnd" tab <br>
-<ul> 
-<li> https://nailed-it-frontend.herokuapp.com</li>
-<li> https://nailed-it-server.herokuapp.com </li>
-</ul>
-Create your own project on the <b>Create</b> tab or explore other uploaded projects with the <b>Explore</b> tab
-
-<br>
-<br>
-
-<details>	
-  <br />
-  <summary>OPEN ME <b>⚙️</b></summary>
-  	<ul>
-  	    <li><b>OS:</b> Windows 11</li>
-	    <li><b>Computers: </b> HP Laptop, Custom Built PC and Mac PC </li>
-  	    <li><b>Browser: </b> Google Chrome</li>
-	    <li><b>Terminal: </b> GitBash </li>
-	    <li><b>Code Editor:</b> VSCode - The best editor out there.</li>
-	    	
-</details>
-<br>
-<br>
 
 
 
 
 ## Routes
 
-| **Method** | **Path** | **Purpose**  |
-| ---------- | -------- | -----------  |
-| `GET`      | /        | Home page    |
-| `GET`      | /explore | Explore page |
-| `POST`     | /create  | Create page  |
-| `PUT`      | /create  | Create page  |
-| `DELETE`   | /        | Home page    |
+| **Method** | **Path** 	| **Purpose**  |
+| ---------- | --------------- 	| -----------  |
+| `GET`      | /		| Home page    |
+| `GET`      | /	 	| Get Product  |
+| `PUT`      | /	 	| Add	       |
+| `DELETE`   | /		| Delete       |
+| `GET`      | /	 	| Get Order    |
+| `PUT`      | /	 	| Update       |
+
+
 
 <br>
 
-## Unfinished functionality
-
-We tried to have a photo upload component with Multer included with the application but were unable to complete its functionality in the time allowed. 
 
 
 
@@ -116,8 +92,9 @@ We tried to have a photo upload component with Multer included with the applicat
 
 
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Deployed on Vercel
+
+
