@@ -28,7 +28,10 @@ const Cart = () => {
 
   const createOrder = async (data) => {
     try {
-      const res = await axios.post("http://localhost:3000/api/orders", data);
+      const res = await axios.post(
+        "https://downstream-topaz.vercel.app/api/orders",
+        data
+      );
       if (res.status === 201) {
         dispatch(reset());
         router.push(`/orders/${res.data._id}`);
@@ -74,7 +77,7 @@ const Cart = () => {
                 ],
               })
               .then((orderId) => {
-                // Your code here after create the order
+                
                 return orderId;
               });
           }}

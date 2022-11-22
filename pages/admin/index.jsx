@@ -14,7 +14,7 @@ const Index = ({ products, orders }) => {
     console.log(id);
     try {
       const res = await axios.delete(
-        "http://localhost:3000/api/products/" + id
+        "https://downstream-topaz.vercel.app/api/products/" + id
       );
       setProductList(productList.filter((product) => product._id !== id));
     } catch (err) {
@@ -27,9 +27,12 @@ const Index = ({ products, orders }) => {
     const currentStatus = item.status;
 
     try {
-      const res = await axios.put("http://localhost:3000/api/orders/" + id, {
-        status: currentStatus + 1,
-      });
+      const res = await axios.put(
+        "https://downstream-topaz.vercel.app/api/orders/" + id,
+        {
+          status: currentStatus + 1,
+        }
+      );
       setOrderList([
         res.data,
         ...orderList.filter((order) => order._id !== id),
@@ -132,8 +135,8 @@ export const getServerSideProps = async (ctx) => {
       },
     };
   }
-  const productRes = await axios.get(`http://localhost:3000/api/products`);
-  const orderRes = await axios.get("http://localhost:3000/api/orders");
+  const productRes = await axios.get(`https://downstream-topaz.vercel.app/api/products`);
+  const orderRes = await axios.get("https://downstream-topaz.vercel.app/api/products");
 
   //return them as a prop
   return {
