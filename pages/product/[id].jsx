@@ -24,14 +24,14 @@ const id = ({ product }) => {
     changePrice(difference);
   };
 
-  const handleChange = (e, upgrade) => {
+  const handleChange = (e, option) => {
     const checked = e.target.checked;
     if (checked) {
-      changePrice(upgrade.price);
-      setExtras((prev) => [...prev, upgrade]);
+      changePrice(option.price);
+      setExtras((prev) => [...prev, option]);
     } else {
-      changePrice(-upgrade.price);
-      setExtras(extras.filter((extra) => extra._id !== upgrade._id));
+      changePrice(-option.price);
+      setExtras(extras.filter((extra) => extra._id !== option._id));
     }
   };
 
@@ -39,6 +39,8 @@ const id = ({ product }) => {
     dispatch(addProduct({ ...product, extras, price, quantity }));
   };
   //what i am passing as a payload
+
+
   if (status === "authenticated") {
     return (
       <div className={styles.container}>
@@ -84,33 +86,33 @@ const id = ({ product }) => {
               <span className={styles.gigs}></span>
             </div>
           </div>
-          <hr></hr>
-          <h3 className={styles.choose}>Choose additional features:</h3>
+
+          <h3 className={styles.choose}>Additonal</h3>
           <div className={styles.addon}>
-            {product.extraOption.map((upgrade) => (
-              <div className={styles.upgrade} key={upgrade._id}>
+            {product.extraOption.map((option) => (
+              <div className={styles.option} key={option._id}>
                 <input
                   type="checkbox"
-                  id={upgrade.text}
-                  name={upgrade.text}
+                  id={option.text}
+                  name={option.text}
                   className={styles.checkbox}
-                  onChange={(e) => handleChange(e, upgrade)}
+                  onChange={(e) => handleChange(e, option)}
                 />
-                <label htmlFor="double">{upgrade.text}</label>
+                <label htmlFor="double">{option.text}</label>
               </div>
             ))}
-            <hr></hr>
-            <div className={styles.add}>
-              <input
-                onChange={(e) => setQuantity(e.target.value)}
-                type="number"
-                defaultValue={1}
-                className={styles.quantity}
-              />
-              <button className={styles.button} onClick={handleClick}>
-                Add to Cart
-              </button>
-            </div>
+          </div>
+          <hr></hr>
+          <div className={styles.add}>
+            <input
+              onChange={(e) => setQuantity(e.target.value)}
+              type="number"
+              defaultValue={1}
+              className={styles.quantity}
+            />
+            <button className={styles.button} onClick={handleClick}>
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>

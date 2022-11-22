@@ -2,14 +2,17 @@ import { useState } from "react";
 import styles from "../styles/Add.module.css";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react"
 
 const Add = ({ setClose }) => {
   const [file, setFile] = useState(null);
   const [title, setTitle] = useState(null);
   const [desc, setDesc] = useState(null);
   const [prices, setPrices] = useState([]);
-  const [extraOptions, setExtraOptions] = useState([]);
+  const [extraOption, setExtraOption] = useState([]);
   const [extra, setExtra] = useState(null);
+
+  
 
   //find current prices first and change its value and set prices afterwards
   const changePrice = (e, index) => {
@@ -25,7 +28,7 @@ const Add = ({ setClose }) => {
   };
   //setting state using previous data
   const handleExtra = (e) => {
-    setExtraOptions((prev) => [...prev, extra]);
+    setExtraOption((prev) => [...prev, extra]);
   };
 
   const handleCreate = async () => {
@@ -43,7 +46,7 @@ const Add = ({ setClose }) => {
         title,
         desc,
         prices,
-        extraOptions,
+        extraOption,
         img: url,
       };
 
@@ -53,7 +56,7 @@ const Add = ({ setClose }) => {
       console.log(err);
     }
   };
-
+{
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -81,8 +84,9 @@ const Add = ({ setClose }) => {
             onChange={(e) => setDesc(e.target.value)}
           />
         </div>
+
         <div className={styles.item}>
-          <label className={styles.label}>DDR4 size</label>
+          <label className={styles.label}>Set 3 prices depending on RAM upgrade</label>
           <div className={styles.priceContainer}>
             <input
               className={`${styles.input} ${styles.inputSm}`}
@@ -104,8 +108,9 @@ const Add = ({ setClose }) => {
             />
           </div>
         </div>
+        
         <div className={styles.item}>
-          <label className={styles.label}>Extra</label>
+          <label className={styles.label}>Add Extra items and price then click add ---</label>
           <div className={styles.extra}>
             <input
               className={`${styles.input} ${styles.inputSm}`}
@@ -126,13 +131,13 @@ const Add = ({ setClose }) => {
             </button>
           </div>
           <div className={styles.extraItems}>
-            {extraOptions.map((option) => (
+            {extraOption.map((option) => (
               <span key={option.text} className={styles.extraItem}>
                 {option.text}
               </span>
             ))}
           </div>
-        </div>
+        </div> 
         <button className={styles.addButton} onClick={handleCreate}>
           Create
         </button>
@@ -140,5 +145,6 @@ const Add = ({ setClose }) => {
     </div>
   );
 };
+}
 
 export default Add;

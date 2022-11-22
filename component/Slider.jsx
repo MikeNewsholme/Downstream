@@ -8,10 +8,10 @@ const Slider = () => {
   //made images into an object to map over
   const images = [
     "/img/computertower2.jpg",
-    "/img/headset.jpg",
+    "/img/fullpc2.jpg",
+    "/img/fullpc3.jpg",
+    "/img/fullpc4.jpg",
     "/img/mousepad.jpg",
-    "/img/mouse.jpeg",
-    "/img/alohaenergy.jpg",
   ];
   const handleArrow = (direction) => {
     //if index is not 0, decrease number by 1. If it is 0, it will go to last item in index

@@ -70,7 +70,6 @@ const Index = ({ products, orders }) => {
                 <td>${product.prices[0]}.00</td>
 
                 <td>
-                  <button className={styles.button}>Edit</button>
                   <button
                     className={styles.button}
                     onClick={() => handleDelete(product._id)}

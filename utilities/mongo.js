@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+import {mongoose }  from "mongoose";
+
 
 const MONGO_URL = process.env.MONGO_URL;
 
@@ -36,5 +37,7 @@ async function dbConnect() {
   cached.conn = await cached.promise;
   return cached.conn;
 }
+
+
 
 export default dbConnect;

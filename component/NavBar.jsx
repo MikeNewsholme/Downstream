@@ -30,7 +30,7 @@ const Navbar = () => {
               width="80"
             />
           </div>
-          <Link href="/login" passHref>
+          <Link href="users/login" passHref>
             <li className={styles.listItem}>Sign In</li>
           </Link>
         </ul>
