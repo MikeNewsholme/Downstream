@@ -69,7 +69,7 @@ const id = ({ product }) => {
             </div>
             <div className={styles.size} onClick={() => handleSize(1)}>
               <Image
-                src="/img/64GB.jpg"
+                src="/img/64gb.jpg"
                 alt="64gb"
                 layout="fill"
                 objectFit="contain"
@@ -78,7 +78,7 @@ const id = ({ product }) => {
             </div>
             <div className={styles.size} onClick={() => handleSize(2)}>
               <Image
-                src="/img/128GB.jpg"
+                src="/img/128gb.jpg"
                 alt="128gb"
                 layout="fill"
                 objectFit="contain"

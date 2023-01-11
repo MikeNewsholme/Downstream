@@ -9,7 +9,7 @@ const Account = () => {
         return (
             <div>
                 <p>
-                    welcome {session.user.name}
+                    Welcome {session.user.name}
                 </p>
             </div>
         )
